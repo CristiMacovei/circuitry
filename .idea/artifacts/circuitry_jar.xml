@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="circuitry:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/circuitry_jar</output-path>
+    <root id="archive" name="circuitry.jar">
+      <element id="module-output" name="circuitry" />
+    </root>
+  </artifact>
+</component>

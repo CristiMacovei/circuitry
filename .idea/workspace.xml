@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="circuitry:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93800927-526b-4ad2-8ddc-9a9d803afee4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dMiV4tKqrSk0dTy5NNraxHaOrE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Calculator" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.circuitry.main.Main" />
+      <module name="circuitry" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.circuitry.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.circuitryide.Main" />
+      <module name="circuitry" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.circuitryide.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="circuitry.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/circuitry_jar/circuitry.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="JAR Application.circuitry.jar" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93800927-526b-4ad2-8ddc-9a9d803afee4" name="Default Changelist" comment="" />
+      <created>1592241383134</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592241383134</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1155" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1593096124839">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1155" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593096124839" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1592243406343" />
+    <state x="-1230" y="169" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592260113532">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1230" y="169" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592260113532" />
+    <state x="-1180" y="141" key="FileChooserDialogImpl" timestamp="1592259409204">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1180" y="141" key="FileChooserDialogImpl/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592259409204" />
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1593107733422">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
+    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1593107733422">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
+    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1593107733422">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
+    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1593107733422">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
+    <state x="-1480" y="-40" key="SettingsEditor" timestamp="1592260120931">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1480" y="-40" key="SettingsEditor/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592260120931" />
+    <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1593092337759">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593092337759" />
+    <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593007649233" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1593007944396">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593007944396" />
+    <state x="-1297" y="88" width="672" height="678" key="search.everywhere.popup" timestamp="1593037028946">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1297" y="88" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593037028946" />
+  </component>
+</project>
