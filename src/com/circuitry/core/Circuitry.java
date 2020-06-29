@@ -8,6 +8,7 @@ import java.util.Vector;
 
 public class Circuitry {
     public Vector<Conductor> conductors =  new Vector<>();
+    public boolean calculated = false;
 
     public void add_component (Conductor conductor) {
         conductors.add(conductor);
@@ -25,6 +26,7 @@ public class Circuitry {
         for (Conductor c: conductors) {
             Conductor left = c.connectionLeft;
             Conductor right = c.connectionRight;
+            // todo draw connections better
             if (left != null) {
                 if (left.connectionLeft == c) {
                     g.drawLine(c.pos.x, c.pos.y+c.size/2, left.pos.x, left.pos.y+left.size/2);
@@ -66,14 +68,17 @@ public class Circuitry {
 
     public void calculateCircuit () {
         // todo make this thing work lmao
-        int ESum = 0, RSum = 0;
+        this.calculated = true;
+        double ESum = 0, RSum = 0;
         for (Conductor c: conductors) {
             ESum += c.E;
             RSum += c.R;
         }
+        System.err.printf("ESum is %f, RSum is %f\n", ESum, RSum);
         double current = (double)ESum / (double)RSum;
         for (Conductor c: conductors) {
             c.I = current;
+            c.calculated = true;
         }
     }
 }

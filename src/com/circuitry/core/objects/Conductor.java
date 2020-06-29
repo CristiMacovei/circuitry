@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Conductor {
+    public boolean calculated = false;
     public double R = 0.0, E = 0.0, I = 0.0;
     public Position pos;
     public int size = 32;
@@ -25,8 +26,13 @@ public class Conductor {
         return p.x <= this.pos.x + size && p.x >= this.pos.x && p.y <= this.pos.y + size && p.y >= this.pos.y;
     }
 
+    /**
+     * method to give the color of a conductor based on the current that flows through it
+     * @return yellow is current is greater than 0, else white
+     */
     public Color getColor () {
-        // todo shade of yellow based on strength of current
+        if (I == 0.0 || !calculated)
+            return Color.white;
         return Color.yellow;
     }
 

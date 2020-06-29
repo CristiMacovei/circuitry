@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class EditMenu extends JFrame {
@@ -16,16 +17,19 @@ public class EditMenu extends JFrame {
     public GridBagLayout gbl = new GridBagLayout();
     public GridBagConstraints gbc =  new GridBagConstraints();
     public static final int width = 320;
-    public static final int height = 260;
+    public static final int height = 300;
     JTextField RInput = new JTextField ();
     JTextField EInput = new JTextField ();
     JTextField leftInput = new JTextField ();
     JTextField rightInput = new JTextField ();
+    JTextField IValue = new JTextField();
+    JTextField ILabel = new JTextField(" I : ");
     JTextField RLabel = new JTextField (" R :  ");
     JTextField ELabel = new JTextField (" E :  ");
     JTextField leftLabel = new JTextField (" left :  ");
     JTextField rightLabel = new JTextField (" right :  ");
     JButton enter = new JButton("enter");
+    DecimalFormat format3digits = new DecimalFormat("#.000");
 
     void add (JComponent component, int x, int y) {
         gbc.gridx = x;
@@ -66,22 +70,26 @@ public class EditMenu extends JFrame {
     void init () {
         gbl.columnWidths = new int [16];
         Arrays.fill(gbl.columnWidths, 20);
-        gbl.rowHeights = new int [13];
+        gbl.rowHeights = new int [15];
         Arrays.fill(gbl.rowHeights, 20);
         gbc.fill = GridBagConstraints.BOTH;
         jTextFieldStyle(EInput, true);
         jTextFieldStyle(RInput, true);
         jTextFieldStyle(leftInput, true);
         jTextFieldStyle(rightInput, true);
+        jTextFieldStyle(IValue, true);
+        IValue.setEditable(false);
         jTextFieldStyle(ELabel, false);
         jTextFieldStyle(RLabel, false);
         jTextFieldStyle(leftLabel, false);
         jTextFieldStyle(rightLabel, false);
+        jTextFieldStyle(ILabel, false);
         jButtonStyle(enter);
-        EInput.setText(Double.toString(conductor.E));
+        EInput.setText(format3digits.format(conductor.E));
         if (conductor.getClass().getName() != "com.circuitry.core.objects.Source")
             EInput.setEditable(false);
-        RInput.setText(Double.toString(conductor.R));
+        RInput.setText(format3digits.format(conductor.R));
+        IValue.setText(format3digits.format(conductor.I));
         leftInput.setText(Boolean.toString(conductor.connectionLeft != null));
         rightInput.setText(Boolean.toString(conductor.connectionRight != null));
         enter.addActionListener(click -> {
@@ -123,11 +131,8 @@ public class EditMenu extends JFrame {
         setLocation(new Point(conductor.pos.x, conductor.pos.y));
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowListener() {
-
             @Override
-            public void windowOpened(WindowEvent windowEvent) {
-
-            }
+            public void windowOpened(WindowEvent windowEvent) { }
 
             @Override
             public void windowClosing(WindowEvent windowEvent) {
@@ -137,39 +142,31 @@ public class EditMenu extends JFrame {
             }
 
             @Override
-            public void windowClosed(WindowEvent windowEvent) {
-
-            }
+            public void windowClosed(WindowEvent windowEvent) { }
 
             @Override
-            public void windowIconified(WindowEvent windowEvent) {
-
-            }
+            public void windowIconified(WindowEvent windowEvent) { }
 
             @Override
-            public void windowDeiconified(WindowEvent windowEvent) {
-
-            }
+            public void windowDeiconified(WindowEvent windowEvent) { }
 
             @Override
-            public void windowActivated(WindowEvent windowEvent) {
-
-            }
+            public void windowActivated(WindowEvent windowEvent) { }
 
             @Override
-            public void windowDeactivated(WindowEvent windowEvent) {
-
-            }
+            public void windowDeactivated(WindowEvent windowEvent) { }
         });
 
         add(EInput,4, 2, 8, 1);
         add(RInput,4, 4, 8, 1);
-        add(leftInput, 4, 6, 8, 1);
-        add(rightInput, 4, 8, 8, 1);
-        add(enter, 6, 10, 4, 1);
+        add(IValue, 4, 6, 8, 1);
+        add(leftInput, 4, 8, 8, 1);
+        add(rightInput, 4, 10, 8, 1);
+        add(enter, 6, 12, 4, 1);
         add(ELabel,1, 2, 2, 1);
         add(RLabel,1, 4, 2, 1);
-        add(leftLabel,1, 6, 2, 1);
-        add(rightLabel,1, 8, 2, 1);
+        add(ILabel, 1, 6, 2, 1);
+        add(leftLabel,1, 8, 2, 1);
+        add(rightLabel,1, 10, 2, 1);
     }
 }

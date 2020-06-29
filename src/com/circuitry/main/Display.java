@@ -1,6 +1,7 @@
 package com.circuitry.main;
 
 import com.circuitry.core.Circuitry;
+import com.circuitry.core.objects.Conductor;
 import com.circuitry.core.objects.Resistor;
 import com.circuitry.core.objects.Source;
 import com.circuitry.utils.Cursor;
@@ -25,6 +26,7 @@ public class Display extends JPanel {
     boolean menu = false;
     // circuitry buttons
     JButton source, resistor, wire;
+    JButton calculate = new JButton("calculate");
     public static Circuitry core = new Circuitry();
     Cursor cursor = new Cursor();
 
@@ -82,6 +84,12 @@ public class Display extends JPanel {
             menu = false;
         });
 
+        buttonStyle(calculate);
+        calculate.addActionListener(onclick -> {
+            core.calculated = false;
+            core.calculateCircuit();
+        });
+
         resistor = new JButton("resistor");
         buttonStyle(resistor);
         resistor.addActionListener(onclick -> {
@@ -92,7 +100,6 @@ public class Display extends JPanel {
         wire = new JButton("wire");
         buttonStyle(wire);
         wire.addActionListener(onclick -> {
-            // todo implement the select-two-conductors-thing
             if (core.conductors.size() < 2) {
                 System.err.println("cannot wire if there are not 2 components at least");
                 return;
@@ -122,11 +129,15 @@ public class Display extends JPanel {
         add(source, 4, 10, 5, 3);
         add(resistor, 4, 15, 5, 3);
         add(wire, 4, 20, 5, 3);
+        add(calculate, 4, 100, 5, 3);
     }
 
     public void paintComponent (Graphics gobj) {
         super.paintComponent(gobj);
         Graphics2D g = (Graphics2D) gobj;
+
+        for (Conductor conductor: core.conductors)
+            conductor.calculated = core.calculated;
 
         clscr(g, bg, size);
         if (cursor.carrying != null) {
@@ -141,6 +152,7 @@ public class Display extends JPanel {
                 source.setVisible(true);
                 resistor.setVisible(true);
                 wire.setVisible(true);
+                calculate.setVisible(true);
             } else {
                 if (menuStage < 2*menuWidth)
                     menuStage ++;
@@ -150,6 +162,7 @@ public class Display extends JPanel {
             source.setVisible(false);
             resistor.setVisible(false);
             wire.setVisible(false);
+            calculate.setVisible(false);
             if (menuStage > 0) {
                 -- menuStage;
                 drawMenu(g, menuColor, menuStage/2);

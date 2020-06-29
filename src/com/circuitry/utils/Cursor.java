@@ -29,9 +29,11 @@ public class Cursor implements java.awt.event.MouseListener, MouseMotionListener
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         System.out.printf("mouse clicked at coords x = %d, y = %d\n", mouseEvent.getX(), mouseEvent.getY());
+        if (Display.core.calculated = true)
+            Display.core.calculated = false;
         if (this.searching != 0) {
             Conductor cond = Display.core.getComponentAt(getMousePosition());
-            if (cond != null) {
+            if (cond != null && (this.searching != 1 || this.searchedConductors.firstElement() != cond)) {
                 -- this.searching;
                 searchedConductors.add(cond);
                 System.err.printf("searching conductor added : %s\n", cond.toString());
@@ -83,8 +85,10 @@ public class Cursor implements java.awt.event.MouseListener, MouseMotionListener
             // mouse carrying nothing clicks, check if inside bounding box
             if (SwingUtilities.isRightMouseButton(mouseEvent)) {
                 Conductor conductor = Display.core.getComponentAt(getMousePosition());
-                System.err.println("trying to edit features of component " + conductor);
-                conductor.isEditMenuActive = true;
+                if (conductor != null) {
+                    System.err.println("trying to edit features of component " + conductor);
+                    conductor.isEditMenuActive = true;
+                }
             }
         }
     }
