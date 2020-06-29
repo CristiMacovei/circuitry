@@ -63,6 +63,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.circuitry.utils.Test" />
+      <module name="circuitry" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.circuitry.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="circuitry.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/circuitry_jar/circuitry.jar" />
       <method v="2" />
@@ -70,6 +83,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="JAR Application.circuitry.jar" />
         <item itemvalue="Application.Main" />
       </list>
@@ -98,38 +112,42 @@
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
     <state x="-1230" y="169" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592260113532" />
+    <state x="-1164" y="271" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593411069896">
+      <screen x="-1920" y="-139" width="1920" height="1050" />
+    </state>
+    <state x="-1164" y="271" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593411069896" />
     <state x="-1180" y="141" key="FileChooserDialogImpl" timestamp="1592259409204">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
     <state x="-1180" y="141" key="FileChooserDialogImpl/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592259409204" />
-    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1593107733422">
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1593412165577">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
-    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593412165577" />
     <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1593107733422">
+    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1593412165577">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
-    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593412165577" />
     <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1593107733422">
+    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1593412165577">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
-    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593412165577" />
     <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1593107733422">
+    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1593412165577">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
-    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593107733422" />
+    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593412165577" />
     <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
     <state x="-1480" y="-40" key="SettingsEditor" timestamp="1592260120931">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
     <state x="-1480" y="-40" key="SettingsEditor/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592260120931" />
-    <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1593092337759">
+    <state x="-1264" y="210" width="756" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1593410673777">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
-    <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593092337759" />
+    <state x="-1264" y="210" width="756" height="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593410673777" />
     <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593007649233" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1593007944396">
       <screen x="0" y="0" width="1920" height="1050" />

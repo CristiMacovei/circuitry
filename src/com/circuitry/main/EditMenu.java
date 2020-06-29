@@ -1,6 +1,7 @@
 package com.circuitry.main;
 
 import com.circuitry.core.objects.Conductor;
+import com.circuitry.core.objects.Source;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,13 +10,21 @@ import java.awt.event.WindowListener;
 import java.util.Arrays;
 
 public class EditMenu extends JFrame {
+    public static final Color bgColor = Color.gray;
+    public static final Color labelColor = Color.lightGray;
     public Conductor conductor;
     public GridBagLayout gbl = new GridBagLayout();
     public GridBagConstraints gbc =  new GridBagConstraints();
-    public static final int width = 200;
-    public static final int height = 300;
+    public static final int width = 320;
+    public static final int height = 260;
     JTextField RInput = new JTextField ();
     JTextField EInput = new JTextField ();
+    JTextField leftInput = new JTextField ();
+    JTextField rightInput = new JTextField ();
+    JTextField RLabel = new JTextField (" R :  ");
+    JTextField ELabel = new JTextField (" E :  ");
+    JTextField leftLabel = new JTextField (" left :  ");
+    JTextField rightLabel = new JTextField (" right :  ");
     JButton enter = new JButton("enter");
 
     void add (JComponent component, int x, int y) {
@@ -24,6 +33,26 @@ public class EditMenu extends JFrame {
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         this.add(component, gbc);
+    }
+
+    void jTextFieldStyle (JTextField jtf, boolean editable) {
+        jtf.setEditable(editable);
+        if (editable) {
+            jtf.setBackground(labelColor);
+            jtf.setForeground(Color.black);
+            jtf.setBorder(BorderFactory.createLineBorder(labelColor, 1, true));
+        } else {
+            jtf.setBackground(bgColor);
+            jtf.setForeground(Color.black);
+            jtf.setBorder(null);
+            jtf.setOpaque(false);
+        }
+    }
+
+    void jButtonStyle (JButton jb) {
+        jb.setBackground(labelColor);
+        jb.setForeground(Color.black);
+        jb.setBorder(BorderFactory.createLineBorder(labelColor, 1, true));
     }
 
     void add (JComponent component, int x, int y, int dx, int dy) {
@@ -35,20 +64,45 @@ public class EditMenu extends JFrame {
     }
 
     void init () {
-        gbl.columnWidths = new int [10];
-        Arrays.fill(gbl.columnWidths, 30);
-        gbl.rowHeights = new int [10];
+        gbl.columnWidths = new int [16];
+        Arrays.fill(gbl.columnWidths, 20);
+        gbl.rowHeights = new int [13];
         Arrays.fill(gbl.rowHeights, 20);
         gbc.fill = GridBagConstraints.BOTH;
+        jTextFieldStyle(EInput, true);
+        jTextFieldStyle(RInput, true);
+        jTextFieldStyle(leftInput, true);
+        jTextFieldStyle(rightInput, true);
+        jTextFieldStyle(ELabel, false);
+        jTextFieldStyle(RLabel, false);
+        jTextFieldStyle(leftLabel, false);
+        jTextFieldStyle(rightLabel, false);
+        jButtonStyle(enter);
         EInput.setText(Double.toString(conductor.E));
         if (conductor.getClass().getName() != "com.circuitry.core.objects.Source")
             EInput.setEditable(false);
         RInput.setText(Double.toString(conductor.R));
+        leftInput.setText(Boolean.toString(conductor.connectionLeft != null));
+        rightInput.setText(Boolean.toString(conductor.connectionRight != null));
         enter.addActionListener(click -> {
             double newR = conductor.R, newE = conductor.E;
             try {
                 newR = Double.parseDouble(RInput.getText());
                 newE = Double.parseDouble(EInput.getText());
+                if (leftInput.getText() == "false") {
+                    if (conductor.connectionLeft.connectionLeft == conductor)
+                        conductor.connectionLeft.connectionLeft = null;
+                    else
+                        conductor.connectionLeft.connectionRight = null;
+                    conductor.connectionLeft = null;
+                }
+                if (rightInput.getText() == "false") {
+                    if (conductor.connectionRight.connectionLeft == conductor)
+                        conductor.connectionRight.connectionLeft = null;
+                    else
+                        conductor.connectionRight.connectionRight = null;
+                    conductor.connectionRight = null;
+                }
             } catch (NumberFormatException exc) {
                 // user entered some string that is not a number
                 System.err.println ("edit non-number entered");
@@ -60,6 +114,8 @@ public class EditMenu extends JFrame {
 
     public EditMenu (Conductor conductor) {
         super("if u see this u fucked it up somewhere");
+        setSize(width, height);
+        this.getContentPane().setBackground(bgColor);
         this.conductor = conductor;
         this.setLayout(gbl);
         this.init();
@@ -105,12 +161,15 @@ public class EditMenu extends JFrame {
 
             }
         });
-        setSize(new Dimension(300,200));
 
-        add(EInput,1, 2, 8, 1);
-        add(RInput,1, 4, 8, 1);
-        add(enter, 4, 6, 3, 1);
+        add(EInput,4, 2, 8, 1);
+        add(RInput,4, 4, 8, 1);
+        add(leftInput, 4, 6, 8, 1);
+        add(rightInput, 4, 8, 8, 1);
+        add(enter, 6, 10, 4, 1);
+        add(ELabel,1, 2, 2, 1);
+        add(RLabel,1, 4, 2, 1);
+        add(leftLabel,1, 6, 2, 1);
+        add(rightLabel,1, 8, 2, 1);
     }
-
-
 }

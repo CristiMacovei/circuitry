@@ -71,7 +71,7 @@ public class Circuitry {
             ESum += c.E;
             RSum += c.R;
         }
-        double current = ESum / RSum;
+        double current = (double)ESum / (double)RSum;
         for (Conductor c: conductors) {
             c.I = current;
         }

@@ -40,6 +40,7 @@ public class Conductor {
         if (!isEditMenuDrawn) {
             EditMenu editMenu = new EditMenu (this);
             editMenu.setVisible(true);
+            editMenu.setSize(EditMenu.width, EditMenu.height);
             isEditMenuDrawn = true;
         }
     }
