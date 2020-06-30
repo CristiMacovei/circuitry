@@ -105,27 +105,7 @@ public class EditMenu extends JFrame {
         leftInput.setText(Boolean.toString(conductor.connectionLeft != null));
         rightInput.setText(Boolean.toString(conductor.connectionRight != null));
         clear.addActionListener(onclick -> {
-            System.out.println("clicked clear");
-            try {
-                Conductor left = conductor.connectionLeft;
-                Conductor right = conductor.connectionRight;
-                if (left.connectionLeft == conductor)
-                    left.connectionLeft = null;
-                if (left.connectionRight == conductor)
-                    left.connectionRight = null;
-                if (right.connectionLeft == conductor)
-                    right.connectionLeft = null;
-                if (right.connectionRight == conductor)
-                    right.connectionRight = null;
-
-            } catch (NullPointerException ignored) {}
-            System.err.printf("Conductor %s will be deleted, list of conductors is: \n", conductor.toString());
-            core.conductors.remove(conductor);
-            for (Conductor conductor: core.conductors) {
-                System.err.println(conductor);
-            }
-            conductor.isEditMenuDrawn = false;
-            conductor.isEditMenuActive = false;
+            core.clear(conductor);
             this.dispose();
         });
         enter.addActionListener(click -> {

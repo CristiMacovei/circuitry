@@ -13,6 +13,6 @@ public class Main {
         jf.setVisible(true);
 
         Thread.sleep(100);
-        disp.start (false);
+        disp.start ();
     }
 }

@@ -28,7 +28,6 @@ public class Display extends JPanel {
     JButton source, resistor, wire;
     JButton calculate = new JButton("calculate");
     JButton clear = new JButton("clear");
-    // todo implement clear
     public static Circuitry core = new Circuitry();
     Cursor cursor = new Cursor();
 
@@ -92,6 +91,9 @@ public class Display extends JPanel {
             core.calculateCircuit();
         });
 
+        buttonStyle(clear);
+        clear.addActionListener(onclick -> core.reset());
+
         resistor = new JButton("resistor");
         buttonStyle(resistor);
         resistor.addActionListener(onclick -> {
@@ -111,13 +113,9 @@ public class Display extends JPanel {
         });
     }
 
-    void start (boolean debug) {
+    void start () {
         while (true) {
             repaint();
-            if (debug)
-                core.dbg();
-            if (debug)
-                System.out.println(menuStage);
         }
     }
 
@@ -132,6 +130,7 @@ public class Display extends JPanel {
         add(resistor, 4, 15, 5, 3);
         add(wire, 4, 20, 5, 3);
         add(calculate, 4, 100, 5, 3);
+        add(clear, 4, 105, 5, 3);
     }
 
     public void paintComponent (Graphics gobj) {
@@ -155,6 +154,7 @@ public class Display extends JPanel {
                 resistor.setVisible(true);
                 wire.setVisible(true);
                 calculate.setVisible(true);
+                clear.setVisible(true);
             } else {
                 if (menuStage < 2*menuWidth)
                     menuStage ++;
@@ -165,12 +165,12 @@ public class Display extends JPanel {
             resistor.setVisible(false);
             wire.setVisible(false);
             calculate.setVisible(false);
+            clear.setVisible(false);
             if (menuStage > 0) {
                 -- menuStage;
                 drawMenu(g, menuColor, menuStage/2);
-            } else {
+            } else
                 left.setVisible(true);
-            }
         }
         core.draw(g);
     }

@@ -6,6 +6,8 @@ import com.circuitry.utils.Position;
 import java.awt.*;
 import java.util.Vector;
 
+import static com.circuitry.main.Display.core;
+
 public class Circuitry {
     public Vector<Conductor> conductors =  new Vector<>();
     public boolean calculated = false;
@@ -82,10 +84,49 @@ public class Circuitry {
         return null;
     }
 
+    /**
+     * method to remove one singular conductor from the circuit
+     * @param conductor = Conductor object to be removed
+     */
+    public void clear (Conductor conductor) {
+        System.out.println("clicked clear");
+        try {
+            Conductor left = conductor.connectionLeft;
+            Conductor right = conductor.connectionRight;
+            if (left.connectionLeft == conductor)
+                left.connectionLeft = null;
+            if (left.connectionRight == conductor)
+                left.connectionRight = null;
+            if (right.connectionLeft == conductor)
+                right.connectionLeft = null;
+            if (right.connectionRight == conductor)
+                right.connectionRight = null;
+
+        } catch (NullPointerException ignored) {}
+        System.err.printf("Conductor %s will be deleted, list of conductors is: \n", conductor.toString());
+        core.conductors.remove(conductor);
+        for (Conductor c: core.conductors) {
+            System.err.println(c);
+        }
+        conductor.isEditMenuDrawn = false;
+        conductor.isEditMenuActive = false;
+    }
+
+    /**
+     * method to clear the entire circuit
+     */
+    public void reset () {
+        conductors = new Vector<>();
+    }
+
     public void calculateCircuit () {
+        if (conductors.isEmpty()) {
+            System.err.println("err : circuit is empty -- process cancelled");
+            return;
+        }
         for (Conductor c: conductors) {
             if (c.connectionLeft == null || c.connectionRight == null) {
-                System.err.println("one conductor has empty connection -- process cancelled");
+                System.err.println("err : one conductor has empty connection -- process cancelled");
                 return;
             }
         }
