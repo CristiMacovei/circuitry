@@ -84,9 +84,9 @@ public class Circuitry {
 
     public void calculateCircuit () {
         for (Conductor c: conductors) {
-            if (c.connectionLeft == null) {
-                System.err.println("one conductor has empty connection -- process aborted");
-                break;
+            if (c.connectionLeft == null || c.connectionRight == null) {
+                System.err.println("one conductor has empty connection -- process cancelled");
+                return;
             }
         }
         this.calculated = true;
@@ -96,7 +96,7 @@ public class Circuitry {
             RSum += c.R;
         }
         System.err.printf("ESum is %f, RSum is %f\n", ESum, RSum);
-        double current = (double)ESum / (double)RSum;
+        double current = ESum / RSum;
         for (Conductor c: conductors) {
             c.I = current;
             c.calculated = true;

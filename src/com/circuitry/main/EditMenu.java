@@ -1,7 +1,7 @@
 package com.circuitry.main;
 
 import com.circuitry.core.objects.Conductor;
-import com.circuitry.core.objects.Source;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +9,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.text.DecimalFormat;
 import java.util.Arrays;
+
+import static com.circuitry.main.Display.core;
 
 public class EditMenu extends JFrame {
     public static final Color bgColor = Color.gray;
@@ -30,7 +32,7 @@ public class EditMenu extends JFrame {
     JTextField rightLabel = new JTextField (" right :  ");
     JButton enter = new JButton("enter");
     JButton clear = new JButton("clear");
-    // todo implement clear
+
     DecimalFormat format3digits = new DecimalFormat("#.000");
 
     void add (JComponent component, int x, int y) {
@@ -69,8 +71,14 @@ public class EditMenu extends JFrame {
         this.add(component, gbc);
     }
 
+    @Override
+    public void dispose () {
+        super.dispose();
+        conductor.isEditMenuDrawn = false;
+        conductor.isEditMenuActive = false;
+    }
+
     void init () {
-        // fixme removing connection doesn't work nobody will ever know why
         gbl.columnWidths = new int [16];
         Arrays.fill(gbl.columnWidths, 20);
         gbl.rowHeights = new int [15];
@@ -88,6 +96,7 @@ public class EditMenu extends JFrame {
         jTextFieldStyle(rightLabel, false);
         jTextFieldStyle(ILabel, false);
         jButtonStyle(enter);
+        jButtonStyle(clear);
         EInput.setText(format3digits.format(conductor.E));
         if (conductor.getClass().getName() != "com.circuitry.core.objects.Source")
             EInput.setEditable(false);
@@ -95,24 +104,52 @@ public class EditMenu extends JFrame {
         IValue.setText(format3digits.format(conductor.I));
         leftInput.setText(Boolean.toString(conductor.connectionLeft != null));
         rightInput.setText(Boolean.toString(conductor.connectionRight != null));
+        clear.addActionListener(onclick -> {
+            System.out.println("clicked clear");
+            try {
+                Conductor left = conductor.connectionLeft;
+                Conductor right = conductor.connectionRight;
+                if (left.connectionLeft == conductor)
+                    left.connectionLeft = null;
+                if (left.connectionRight == conductor)
+                    left.connectionRight = null;
+                if (right.connectionLeft == conductor)
+                    right.connectionLeft = null;
+                if (right.connectionRight == conductor)
+                    right.connectionRight = null;
+
+            } catch (NullPointerException ignored) {}
+            System.err.printf("Conductor %s will be deleted, list of conductors is: \n", conductor.toString());
+            core.conductors.remove(conductor);
+            for (Conductor conductor: core.conductors) {
+                System.err.println(conductor);
+            }
+            conductor.isEditMenuDrawn = false;
+            conductor.isEditMenuActive = false;
+            this.dispose();
+        });
         enter.addActionListener(click -> {
             double newR = conductor.R, newE = conductor.E;
             try {
                 newR = Double.parseDouble(RInput.getText());
                 newE = Double.parseDouble(EInput.getText());
-                if (leftInput.getText() == "false") {
-                    if (conductor.connectionLeft.connectionLeft == conductor)
-                        conductor.connectionLeft.connectionLeft = null;
-                    else
-                        conductor.connectionLeft.connectionRight = null;
-                    conductor.connectionLeft = null;
+                if (leftInput.getText().equals("false")) {
+                    try {
+                        if (conductor.connectionLeft.connectionLeft == conductor)
+                            conductor.connectionLeft.connectionLeft = null;
+                        else
+                            conductor.connectionLeft.connectionRight = null;
+                        conductor.connectionLeft = null;
+                    } catch (NullPointerException ignored) {}
                 }
-                if (rightInput.getText() == "false") {
-                    if (conductor.connectionRight.connectionLeft == conductor)
-                        conductor.connectionRight.connectionLeft = null;
-                    else
-                        conductor.connectionRight.connectionRight = null;
-                    conductor.connectionRight = null;
+                if (rightInput.getText().equals("false")) {
+                    try {
+                        if (conductor.connectionRight.connectionLeft == conductor)
+                            conductor.connectionRight.connectionLeft = null;
+                        else
+                            conductor.connectionRight.connectionRight = null;
+                        conductor.connectionRight = null;
+                    } catch (NullPointerException ignored) {}
                 }
             } catch (NumberFormatException exc) {
                 // user entered some string that is not a number
@@ -120,7 +157,7 @@ public class EditMenu extends JFrame {
             }
             conductor.E = newE;
             conductor.R = newR;
-//            this.dispose();
+            this.dispose();
         });
     }
 
@@ -140,8 +177,6 @@ public class EditMenu extends JFrame {
 
             @Override
             public void windowClosing(WindowEvent windowEvent) {
-                conductor.isEditMenuDrawn = false;
-                conductor.isEditMenuActive = false;
                 dispose();
             }
 
@@ -166,7 +201,8 @@ public class EditMenu extends JFrame {
         add(IValue, 4, 6, 8, 1);
         add(leftInput, 4, 8, 8, 1);
         add(rightInput, 4, 10, 8, 1);
-        add(enter, 6, 12, 4, 1);
+        add(enter, 3, 12, 4, 1);
+        add(clear, 9, 12, 4, 1);
         add(ELabel,1, 2, 2, 1);
         add(RLabel,1, 4, 2, 1);
         add(ILabel, 1, 6, 2, 1);

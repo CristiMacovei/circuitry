@@ -5,10 +5,11 @@ import com.circuitry.main.Display;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.Vector;
 
-public class Cursor implements java.awt.event.MouseListener, MouseMotionListener {
+public class Cursor implements MouseListener, MouseMotionListener {
     public Conductor carrying = null;
     int cursorX = 0, cursorY = 0;
     public int searching = 0;
