@@ -16,6 +16,6 @@ public class Resistor extends Conductor {
     @Override
     public void draw(Graphics2D g) {
         g.setColor(this.getColor());
-        g.drawRect(this.pos.x, this.pos.y, this.size, this.size/2);
+        g.drawRect(this.pos.x, this.pos.y+this.size/4, this.size, this.size/2);
     }
 }

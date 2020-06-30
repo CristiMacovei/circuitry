@@ -29,6 +29,8 @@ public class EditMenu extends JFrame {
     JTextField leftLabel = new JTextField (" left :  ");
     JTextField rightLabel = new JTextField (" right :  ");
     JButton enter = new JButton("enter");
+    JButton clear = new JButton("clear");
+    // todo implement clear
     DecimalFormat format3digits = new DecimalFormat("#.000");
 
     void add (JComponent component, int x, int y) {
@@ -68,6 +70,7 @@ public class EditMenu extends JFrame {
     }
 
     void init () {
+        // fixme removing connection doesn't work nobody will ever know why
         gbl.columnWidths = new int [16];
         Arrays.fill(gbl.columnWidths, 20);
         gbl.rowHeights = new int [15];
@@ -117,6 +120,7 @@ public class EditMenu extends JFrame {
             }
             conductor.E = newE;
             conductor.R = newR;
+//            this.dispose();
         });
     }
 

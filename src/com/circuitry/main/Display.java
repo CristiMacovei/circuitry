@@ -27,6 +27,8 @@ public class Display extends JPanel {
     // circuitry buttons
     JButton source, resistor, wire;
     JButton calculate = new JButton("calculate");
+    JButton clear = new JButton("clear");
+    // todo implement clear
     public static Circuitry core = new Circuitry();
     Cursor cursor = new Cursor();
 
