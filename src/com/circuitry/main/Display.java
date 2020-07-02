@@ -1,9 +1,7 @@
 package com.circuitry.main;
 
 import com.circuitry.core.Circuitry;
-import com.circuitry.core.objects.Conductor;
-import com.circuitry.core.objects.Resistor;
-import com.circuitry.core.objects.Source;
+import com.circuitry.core.objects.*;
 import com.circuitry.utils.Cursor;
 
 import javax.swing.*;
@@ -25,7 +23,7 @@ public class Display extends JPanel {
     JButton left2 = new JButton ("<");
     boolean menu = false;
     // circuitry buttons
-    JButton source, resistor, wire;
+    JButton source, resistor, switch_,  wire;
     JButton calculate = new JButton("calculate");
     JButton clear = new JButton("clear");
     public static Circuitry core = new Circuitry();
@@ -85,6 +83,13 @@ public class Display extends JPanel {
             menu = false;
         });
 
+        switch_ = new JButton("switch");
+        buttonStyle(switch_);
+        switch_.addActionListener(onclick -> {
+            cursor.carrying = new Switch(cursor.getMousePosition());
+            menu = false;
+        });
+
         buttonStyle(calculate);
         calculate.addActionListener(onclick -> {
             core.calculated = false;
@@ -128,7 +133,8 @@ public class Display extends JPanel {
         add(left2, 10, 60, 3, 3);
         add(source, 4, 10, 5, 3);
         add(resistor, 4, 15, 5, 3);
-        add(wire, 4, 20, 5, 3);
+        add(switch_, 4, 20, 5, 3);
+        add(wire, 4, 25, 5, 3);
         add(calculate, 4, 100, 5, 3);
         add(clear, 4, 105, 5, 3);
     }
@@ -155,6 +161,7 @@ public class Display extends JPanel {
                 wire.setVisible(true);
                 calculate.setVisible(true);
                 clear.setVisible(true);
+                switch_.setVisible(true);
             } else {
                 if (menuStage < 2*menuWidth)
                     menuStage ++;
@@ -166,6 +173,7 @@ public class Display extends JPanel {
             wire.setVisible(false);
             calculate.setVisible(false);
             clear.setVisible(false);
+            switch_.setVisible(false);
             if (menuStage > 0) {
                 -- menuStage;
                 drawMenu(g, menuColor, menuStage/2);

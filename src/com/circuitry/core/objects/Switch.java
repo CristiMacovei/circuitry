@@ -2,11 +2,21 @@ package com.circuitry.core.objects;
 
 import com.circuitry.utils.Position;
 
+import java.awt.*;
+
 public class Switch extends Conductor {
-    public final double defaultR = 0.0, defaultE = 0.0;
-    public Switch(double r, double e, Position pos) {
+    public boolean open = false;
+    public Switch(Position pos) {
         super(pos);
-        this.R = defaultR;
-        this.E = defaultE;
+        this.E = 0.0;
+    }
+
+    @Override
+    public void draw(Graphics2D g) {
+        g.setColor(this.getColor());
+        if (!open)
+            g.drawLine(this.pos.x, this.pos.y+this.size/2, this.pos.x+this.size, this.pos.y+this.size/2);
+        else
+            g.drawLine(this.pos.x, this.pos.y+this.size/2, this.pos.x+this.size, this.pos.y);
     }
 }

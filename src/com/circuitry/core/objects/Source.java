@@ -1,6 +1,5 @@
 package com.circuitry.core.objects;
 
-import com.circuitry.main.Display;
 import com.circuitry.utils.Position;
 
 import java.awt.*;
@@ -23,6 +22,4 @@ public class Source extends Conductor {
         g.drawLine(this.pos.x+3*size/4, this.pos.y+size/2, this.pos.x+3*size/4-(int)(size/4*Math.sin(45)), this.pos.y+size/2-(int)(size/4*Math.sin(45)));
         g.drawLine(this.pos.x+3*size/4, this.pos.y+size/2, this.pos.x+3*size/4-(int)(size/4*Math.sin(45)), this.pos.y+size/2+(int)(size/4*Math.sin(45)));
     }
-
-
 }

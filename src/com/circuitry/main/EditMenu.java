@@ -1,7 +1,6 @@
 package com.circuitry.main;
 
-import com.circuitry.core.objects.Conductor;
-import org.jetbrains.annotations.NotNull;
+import com.circuitry.core.objects.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -100,7 +99,11 @@ public class EditMenu extends JFrame {
         EInput.setText(format3digits.format(conductor.E));
         if (conductor.getClass().getName() != "com.circuitry.core.objects.Source")
             EInput.setEditable(false);
-        RInput.setText(format3digits.format(conductor.R));
+        if (conductor.getClass().getName().equals("com.circuitry.core.objects.Switch")) {
+            RLabel.setText("open: ");
+            RInput.setText(String.valueOf(((Switch) conductor).open));
+        } else
+            RInput.setText(format3digits.format(conductor.R));
         IValue.setText(format3digits.format(conductor.I));
         leftInput.setText(Boolean.toString(conductor.connectionLeft != null));
         rightInput.setText(Boolean.toString(conductor.connectionRight != null));
@@ -111,7 +114,13 @@ public class EditMenu extends JFrame {
         enter.addActionListener(click -> {
             double newR = conductor.R, newE = conductor.E;
             try {
-                newR = Double.parseDouble(RInput.getText());
+                if (conductor.getClass().getName().equals("com.circuitry.core.objects.Switch")) {
+                    if (RInput.getText().equals("false"))
+                        ((Switch) conductor).open = false;
+                    else if (RInput.getText().equals("true"))
+                        ((Switch) conductor).open = true;
+                } else
+                    newR = Double.parseDouble(RInput.getText());
                 newE = Double.parseDouble(EInput.getText());
                 if (leftInput.getText().equals("false")) {
                     try {

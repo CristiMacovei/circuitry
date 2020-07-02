@@ -1,6 +1,7 @@
 package com.circuitry.core;
 
 import com.circuitry.core.objects.Conductor;
+import com.circuitry.core.objects.Switch;
 import com.circuitry.utils.Position;
 
 import java.awt.*;
@@ -14,11 +15,6 @@ public class Circuitry {
 
     public void add_component (Conductor conductor) {
         conductors.add(conductor);
-    }
-
-    public void dbg () {
-        for (Conductor conductor: conductors)
-            System.err.println(conductor);
     }
 
     /**
@@ -119,14 +115,22 @@ public class Circuitry {
         conductors = new Vector<>();
     }
 
+    /**
+     * method to calculate the current through the circuit
+     */
     public void calculateCircuit () {
+        // fixme
         if (conductors.isEmpty()) {
-            System.err.println("err : circuit is empty -- process cancelled");
+            System.err.println("[Circuit compute failed] circuit is empty -- process cancelled");
             return;
         }
         for (Conductor c: conductors) {
             if (c.connectionLeft == null || c.connectionRight == null) {
-                System.err.println("err : one conductor has empty connection -- process cancelled");
+                System.err.println("[Circuit compute failed] one conductor has empty connection -- process cancelled");
+                return;
+            }
+            if (c.getClass().getName().equals("com.circuitry.core.objects.Switch") && ((Switch) c).open) {
+                System.err.println("[Circuit compute failed] found open switch -- process cancelled");
                 return;
             }
         }

@@ -6,7 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93800927-526b-4ad2-8ddc-9a9d803afee4" name="Default Changelist" comment="" />
+    <list default="true" id="93800927-526b-4ad2-8ddc-9a9d803afee4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/core/Circuitry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/core/Circuitry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/core/objects/Source.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/core/objects/Source.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/core/objects/Switch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/core/objects/Switch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/main/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/main/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/main/EditMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/main/EditMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/main/EditMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/circuitry/com/circuitry/main/EditMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/circuitry/core/Circuitry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/circuitry/core/Circuitry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/circuitry/core/objects/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/circuitry/core/objects/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/circuitry/core/objects/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/circuitry/core/objects/Switch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/circuitry/main/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/circuitry/main/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/circuitry/main/EditMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/circuitry/main/EditMenu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,11 +122,12 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1155" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1593096124839">
-      <screen x="-1920" y="-139" width="1920" height="1050" />
+    <state x="-1155" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1593717876327">
+      <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1155" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593096124839" />
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1592243406343" />
+    <state x="-1155" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593717876327" />
     <state x="-1230" y="169" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592260113532">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
@@ -127,30 +141,30 @@
     </state>
     <state x="-1180" y="141" key="FileChooserDialogImpl/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592259409204" />
     <state x="-1180" y="280" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593504484050" />
-    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1593514950980">
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1593719154397">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593467008538" />
     <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593514950980" />
-    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1593514950980">
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593719154397" />
+    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1593719154396">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="351" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593467008538" />
     <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593514950980" />
-    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1593514950980">
+    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593719154396" />
+    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1593719154396">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="351" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593467008538" />
     <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593514950980" />
-    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1593514950980">
+    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593719154396" />
+    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1593719154396">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="351" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593467008538" />
     <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593092860748" />
-    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593514950980" />
+    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593719154396" />
     <state width="1877" height="351" key="GridCell.Tab.1.bottom" timestamp="1593467008538">
       <screen x="-1920" y="-139" width="1920" height="1050" />
     </state>
@@ -172,20 +186,20 @@
     </state>
     <state x="-1480" y="-40" key="SettingsEditor/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1592260120931" />
     <state x="-1480" y="99" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593504485370" />
-    <state x="-1264" y="349" width="756" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1593503972026">
+    <state x="-1264" y="349" width="756" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1593716995362">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1264" y="210" width="756" height="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@-1920.-139.1920.1050" timestamp="1593442041242" />
     <state x="-1264" y="210" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.-139.1920.1050@0.0.1920.1050" timestamp="1593007649233" />
-    <state x="-1264" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593503972026" />
+    <state x="-1264" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593716995362" />
     <state x="-1256" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1593507770310">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1256" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593507770310" />
-    <state x="-1151" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593504463118">
+    <state x="-1151" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593717181107">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="-1151" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593504463118" />
+    <state x="-1151" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1593717181107" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1593007944396">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
